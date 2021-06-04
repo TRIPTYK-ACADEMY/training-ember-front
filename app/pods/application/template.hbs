@@ -1,0 +1,19 @@
+{{page-title "Training Ember"}}
+<h1 class="py-4 mx-10 border-b-2 border-white">
+  Emberjs training
+  <small class="text-sm">with
+    <span class="text-blue-400">TRIPTYK</span>
+  </small>
+</h1>
+<ul class="m-10">
+  {{#each this.model as |song|}}
+    <li>{{song.band}} {{song.title}} ({{song.rating}})</li>
+  {{/each}}
+</ul>
+
+{{! 
+  Template -> Il nous permet de faire de l'HTML en récupérant des infos de la route et/ou du controller
+  Route -> Elle nous donne les informations (la data) à manipuler
+  Controller -> L'élément qui gère la logique de notre template (action, variable, ...)
+  ---Model---
+ }}

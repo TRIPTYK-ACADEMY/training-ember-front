@@ -1,0 +1,13 @@
+{
+  "tailwindCSS.emmetCompletions": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "prettier.documentSelectors": ["**/*.hbs"],
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html",
+    "Handlebars": "html"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
