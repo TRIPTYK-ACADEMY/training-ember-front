@@ -1,23 +1,43 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-body{
-  @apply m-0 p-0 bg-gray-800 font-sans text-white;
+body {
+  @apply p-0 m-0 font-sans text-white bg-gray-800;
 }
 
-h1{
-  @apply text-3xl font-medium pl-6;
+h1 {
+  @apply pl-6 text-3xl font-medium;
 }
 
-h2{
-  @apply text-2xl pl-2;
+h2 {
+  @apply pl-2 text-2xl;
 }
 
-h3{
+h3 {
   @apply text-xl;
 }
 
-a{
-  @apply text-teal-300 no-underline font-semibold;
+a {
+  @apply font-semibold text-teal-300 no-underline;
+}
+
+.btnIcon {
+  @apply flex items-center mt-2;
+}
+
+.btnIcon svg {
+  @apply w-6 pr-1 text-white fill-current;
+}
+
+.btnPrimary {
+  @apply p-2 text-white bg-teal-500 rounded;
+}
+
+.btnSecondary {
+  @apply p-2 text-white bg-red-500 rounded;
+}
+
+input {
+  @apply px-2 py-1 text-gray-800;
 }
