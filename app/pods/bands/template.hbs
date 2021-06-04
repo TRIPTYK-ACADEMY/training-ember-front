@@ -3,7 +3,9 @@
   {{#each this.model as |band|}}
     <div class="flex justify-between">
       <div>
-        {{band.name}}
+        <LinkTo @route="bands.band.songs" @model={{band.id}}>
+          {{band.name}}
+        </LinkTo>
       </div>
     </div>
   {{/each}}
