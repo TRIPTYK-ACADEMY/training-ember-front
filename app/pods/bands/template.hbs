@@ -1,0 +1,11 @@
+{{page-title "Bands"}}
+<div class="w-96">
+  {{#each this.model as |band|}}
+    <div class="flex justify-between">
+      <div>
+        {{band.title}}
+      </div>
+    </div>
+  {{/each}}
+</div>
+{{outlet}}
