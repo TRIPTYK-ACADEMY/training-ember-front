@@ -20,9 +20,13 @@ export default class StarRatingComponent extends Component {
 
   @action
   setRating(selectRating) {
-    console.log(selectRating);
-    console.log(this.args.item);
-    this.args.item.set('rating', selectRating);
-    this.args.item.save();
+    if (this.args.actionToUpdateRating) {
+      this.args.actionToUpdateRating({
+        song: this.args.item,
+        rating: selectRating,
+      });
+    }
+    // this.args.item.set('rating', selectRating);
+    // this.args.item.save();
   }
 }

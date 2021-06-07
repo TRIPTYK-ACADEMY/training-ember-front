@@ -10,8 +10,11 @@
         <span class="text-sm text-teal-200">by {{song.band.name}}</span>
       </div>
       <div class="flex">
-        <StarRating @rating={{song.rating}} @item={{song}}>
-          Voici la note:
+        <StarRating
+          @rating={{song.rating}}
+          @item={{song}}
+          @actionToUpdateRating={{this.updateRating}}
+        >
           {{song.rating}}
         </StarRating>
       </div>

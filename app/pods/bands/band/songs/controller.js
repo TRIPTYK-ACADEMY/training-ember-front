@@ -34,6 +34,14 @@ export default class SongsBandSongsController extends Controller {
   }
 
   @action
+  updateRating(params) {
+    // Action appelé au click du bouton dans le component (DDAU (Data Down Action Up))
+    const { song, rating } = params;
+    song.set('rating', rating);
+    song.save();
+  }
+
+  @action
   cancelSong() {
     this.isAddingSong = false;
     this.selectSong = {
