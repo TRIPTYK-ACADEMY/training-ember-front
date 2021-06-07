@@ -1,3 +1,4 @@
+{{yield}}
 {{#each this.stars as |star|}}
   {{#if star.isFull}}
     <button type="button" {{on "click" (fn this.setRating star.rating)}}>

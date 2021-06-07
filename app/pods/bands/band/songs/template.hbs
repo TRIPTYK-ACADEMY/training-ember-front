@@ -1,5 +1,5 @@
 {{page-title "Songs"}}
-<div class="w-96">
+<div class="w-128">
   <h2>Les musiques de
     <span class="text-blue-500">{{this.model.name}}</span>
   </h2>
@@ -10,7 +10,10 @@
         <span class="text-sm text-teal-200">by {{song.band.name}}</span>
       </div>
       <div class="flex">
-        <StarRating @rating={{song.rating}} @item={{song}} />
+        <StarRating @rating={{song.rating}} @item={{song}}>
+          Voici la note:
+          {{song.rating}}
+        </StarRating>
       </div>
     </div>
   {{/each}}
