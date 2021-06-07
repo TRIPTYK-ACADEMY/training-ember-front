@@ -10,14 +10,22 @@
     </div>
   {{/each}}
   {{#if this.isAddingBand}}
-    <form class="flex mt-2" {{on "submit" this.addBand}}>
+    <form
+      class="flex mt-2"
+      {{on "submit" this.addBand}}
+      {{on "reset" this.cancelBand}}
+    >
       <Input
         @type="text"
         @value={{this.selectBand.name}}
         placeholder="Nouveau groupe"
       />
 
-      <button type="submit" class="ml-4 btnPrimary">
+      <button
+        type="submit"
+        class="ml-4 btnPrimary disabled:opacity-50"
+        disabled={{this.isAddButtonDisabled}}
+      >
         Ajouter
       </button>
       <button type="reset" class="ml-4 btnSecondary">

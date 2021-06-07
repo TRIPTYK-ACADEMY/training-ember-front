@@ -12,5 +12,5 @@ Router.map(function () {
       this.route('songs');
     });
   });
-  this.route('songs');
+  this.route('songs', function () {});
 });
