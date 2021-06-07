@@ -9,7 +9,9 @@
         {{song.title}}
         <span class="text-sm text-teal-200">by {{song.band.name}}</span>
       </div>
-      <span>{{song.rating}}</span>
+      <div class="flex">
+        <StarRating @rating={{song.rating}} @item={{song}} />
+      </div>
     </div>
   {{/each}}
   {{#if this.isAddingSong}}
