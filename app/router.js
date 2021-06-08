@@ -14,4 +14,5 @@ Router.map(function () {
     });
   });
   this.route('songs', function () {});
+  this.route('favorites');
 });

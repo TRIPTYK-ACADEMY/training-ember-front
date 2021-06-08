@@ -2,17 +2,16 @@ import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
-export default class SongsController extends Controller {
+export default class FavoritesController extends Controller {
   @service favoritesSong;
 
   @action
-  deleteSong(song) {
+  deleteFavorite(song) {
     this.favoritesSong.remove(song);
-    song.destroyRecord();
   }
 
   @action
-  addFavorites(song) {
-    this.favoritesSong.add(song);
+  clearFavorites() {
+    this.favoritesSong.empty();
   }
 }

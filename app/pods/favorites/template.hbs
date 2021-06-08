@@ -1,9 +1,10 @@
-{{page-title "Songs"}}
-<div class="w-96">
+{{page-title "Favorites"}}
+
+<div class="w-128">
   {{#each this.model as |song|}}
     <div class="flex justify-between">
       <div class="flex items-center">
-        <button type="button" {{on "click" (fn this.deleteSong song)}}>
+        <button type="button" {{on "click" (fn this.deleteFavorite song)}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -14,22 +15,26 @@
             ></path>
           </svg>
         </button>
-        <button type="button" {{on "click" (fn this.addFavorites song)}}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            class="w-4 mx-2 mr-6 text-green-500 fill-current"
-          >
-            <path
-              d="M10 3.22l-.61-.6a5.5 5.5 0 0 0-7.78 7.77L10 18.78l8.39-8.4a5.5 5.5 0 0 0-7.78-7.77l-.61.61z"
-            ></path>
-          </svg>
-        </button>
         <span>{{song.title}}</span>
         <span class="ml-1 text-sm text-teal-200">by {{song.band.name}}</span>
       </div>
       <span>{{song.rating}}</span>
     </div>
+  {{else}}
+    <h2 class="mb-16 text-center">Aucun favori n'a été sélectionné</h2>
+    <LinkTo @route="songs" class="text-sm">
+      Retourner sur la liste des musiques
+    </LinkTo>
   {{/each}}
+  {{#if this.model.length}}
+    <div class="flex justify-end mt-4">
+      <button
+        type="button"
+        class="btnSecondary"
+        {{on "click" this.clearFavorites}}
+      >
+        Supprimer la liste des favoris
+      </button>
+    </div>
+  {{/if}}
 </div>
-{{outlet}}
