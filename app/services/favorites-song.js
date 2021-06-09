@@ -6,7 +6,6 @@ export default class FavoritesSongService extends Service {
 
   add(item) {
     this.items.pushObject(item);
-    this.items = this.items.uniq();
   }
 
   remove(item) {

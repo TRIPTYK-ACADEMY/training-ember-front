@@ -1,6 +1,25 @@
 {{page-title "Songs"}}
-<div class="w-96">
-  {{#each this.model as |song|}}
+<div class="w-128">
+  <div class="flex justify-between mb-2 ml-20">
+    <LinkTo
+      @route="songs"
+      class="flex items-center text-sm text-indigo-400"
+      @query={{hash name=this.direction}}
+    >
+      Titre de la musique
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        class="w-3 ml-1 text-white fill-current
+          {{if (eq this.direction "desc") "transform rotate-180"}}"
+      >
+        <path
+          d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+        ></path>
+      </svg>
+    </LinkTo>
+  </div>
+  {{#each this.filteredSong as |song|}}
     <div class="flex justify-between">
       <div class="flex items-center">
         <button type="button" {{on "click" (fn this.deleteSong song)}}>
@@ -14,7 +33,7 @@
             ></path>
           </svg>
         </button>
-        <button type="button" {{on "click" (fn this.addFavorites song)}}>
+        <button type="button" {{on "click" (fn this.toggleFavorites song)}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
