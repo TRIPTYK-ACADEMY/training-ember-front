@@ -1,7 +1,11 @@
 {{yield}}
 {{#each this.stars as |star|}}
   {{#if star.isFull}}
-    <button type="button" {{on "click" (fn this.setRating star.rating)}}>
+    <button
+      type="button"
+      {{on "click" (fn this.setRating star.rating)}}
+      {{hover-star}}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
@@ -13,7 +17,11 @@
       </svg>
     </button>
   {{else}}
-    <button type="button" {{on "click" (fn this.setRating star.rating)}}>
+    <button
+      type="button"
+      {{on "click" (fn this.setRating star.rating)}}
+      {{hover-star}}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
